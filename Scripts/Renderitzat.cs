@@ -48,7 +48,7 @@ public class Renderitzat : MonoBehaviour
         }
     }
 
-    public void CanviarRenderer(Camara cam, int index)
+    public void CanviarRenderer(Camera cam, int index)
     {
         var x = cam.GetComponent<UniversalAdditionalCameraData>();
         x.SetRenderer(index);
