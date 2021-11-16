@@ -28,7 +28,7 @@ public class Renderitzat : MonoBehaviour
                 GraphicsSettings.renderPipelineAsset = alta;
                 break;
         }
-        guardat.Set(KEY_GUARDAT_QUALITAT, qualitat);
+        guardat.SetLocal(KEY_GUARDAT_QUALITAT, qualitat);
     }
 
     public void AugmentarQualitat()
