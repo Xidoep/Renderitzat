@@ -296,7 +296,7 @@ MonoBehaviour:
       RenderQueueType: 0
       LayerMask:
         serializedVersion: 2
-        m_Bits: 288
+        m_Bits: 512
       PassNames: []
     overrideMaterial: {fileID: 2100000, guid: e66d59eb66a6ab643a566bb2311653e7, type: 2}
     overrideMaterialPassIndex: 0
