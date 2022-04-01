@@ -53,4 +53,9 @@ public class Renderitzat : MonoBehaviour
         var x = cam.GetComponent<UniversalAdditionalCameraData>();
         x.SetRenderer(index);
     }
+
+    private void OnValidate()
+    {
+        guardat = XS_Utils.XS_Editor.LoadGuardat<Guardat>();
+    }
 }
