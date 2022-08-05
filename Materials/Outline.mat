@@ -34,6 +34,8 @@ Material:
     m_Ints: []
     m_Floats:
     - Vector1_521CE2C9: 0.03
+    - _QueueControl: 1
+    - _QueueOffset: 0
     m_Colors:
     - Color_A0DDEACE: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
