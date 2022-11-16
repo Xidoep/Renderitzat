@@ -84,9 +84,9 @@ Material:
     - _BumpScale: 1
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
-    - _ColorStrength: 1.5
-    - _ColorThickness: 0.5
-    - _ColorThreshold: 1.5
+    - _ColorStrength: 2
+    - _ColorThickness: 1
+    - _ColorThreshold: 2
     - _Cull: 2
     - _Cutoff: 0.5
     - _DepthStrength: 5
@@ -110,7 +110,7 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _Surface: 0
-    - _Thickness: 0.002
+    - _Thickness: 0.001
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
