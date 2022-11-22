@@ -84,9 +84,9 @@ Material:
     - _BumpScale: 1
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
-    - _ColorStrength: 5
+    - _ColorStrength: 3
     - _ColorThickness: 1
-    - _ColorThreshold: 5
+    - _ColorThreshold: 3
     - _Cull: 2
     - _Cutoff: 0.5
     - _DepthStrength: 10
