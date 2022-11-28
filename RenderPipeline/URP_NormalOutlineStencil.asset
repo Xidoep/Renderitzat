@@ -35,7 +35,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f269f2e992d72f84cbb638740093c0f1, type: 3}
   m_Name: Outlines
   m_EditorClassIdentifier: 
-  m_Active: 1
+  m_Active: 0
   settings:
     material: {fileID: 2100000, guid: 10fe6dfdba64c3445a3b774030205a7b, type: 2}
     materialPassIndex: 0
@@ -50,11 +50,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6b3d386ba5cd94485973aee1479b272e, type: 3}
-  m_Name: Cami
+  m_Name: Obertures
   m_EditorClassIdentifier: 
   m_Active: 1
   settings:
-    passTag: Cami
+    passTag: Obertures
     Event: 300
     filterSettings:
       RenderQueueType: 0
@@ -135,10 +135,10 @@ MonoBehaviour:
   m_RendererFeatures:
   - {fileID: -7250890039190623029}
   - {fileID: 1616140196511826597}
-  - {fileID: -8194795654599567539}
   - {fileID: -4146723388441742733}
   - {fileID: -7150682478000690651}
-  m_RendererFeatureMap: cbec9f1ceda95f9ba5425130f2ae6d164d97ad20c53c468e7332206a0ce173c625aa28152cacc39c
+  - {fileID: -8194795654599567539}
+  m_RendererFeatureMap: cbec9f1ceda95f9ba5425130f2ae6d167332206a0ce173c625aa28152cacc39c4d97ad20c53c468e
   m_UseNativeRenderPass: 0
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
   xrSystemData: {fileID: 11400000, guid: 60e1133243b97e347b653163a8c01b64, type: 2}
