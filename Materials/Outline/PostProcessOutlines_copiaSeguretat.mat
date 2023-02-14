@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: PostProcessOutlines
+  m_Name: PostProcessOutlines_copiaSeguretat
   m_Shader: {fileID: -6465566751694194690, guid: 013fcaa6d878bcb41bc7e7f554bf08ab, type: 3}
   m_ShaderKeywords: REQUIRE_DEPTH_TEXTURE REQUIRE_OPAQUE_TEXTURE
   m_LightmapFlags: 4
@@ -86,12 +86,12 @@ Material:
     - _ClearCoatSmoothness: 0
     - _ColorStrength: 3
     - _ColorThickness: 1
-    - _ColorThreshold: 1
+    - _ColorThreshold: 3
     - _Cull: 2
     - _Cutoff: 0.5
     - _DepthStrength: 10
     - _DepthThickness: 0.6
-    - _DepthThreshold: 0.09
+    - _DepthThreshold: 0.1
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
@@ -110,7 +110,7 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _Surface: 0
-    - _Thickness: 0.0007
+    - _Thickness: 0.0006
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
