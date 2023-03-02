@@ -37,12 +37,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Active: 0
   settings:
-    renderEvent: 500
-    LayerMask:
-      serializedVersion: 2
-      m_Bits: 2147483647
     material: {fileID: 2100000, guid: 10fe6dfdba64c3445a3b774030205a7b, type: 2}
     materialPassIndex: 0
+    renderEvent: 500
 --- !u!114 &-4146723388441742733
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -99,10 +96,11 @@ MonoBehaviour:
   m_RendererFeatures:
   - {fileID: -7250890039190623029}
   - {fileID: 1616140196511826597}
-  - {fileID: -8194795654599567539}
   - {fileID: -4146723388441742733}
   - {fileID: 4641944458736548923}
-  m_RendererFeatureMap: cbec9f1ceda95f9ba5425130f2ae6d164d97ad20c53c468e7332206a0ce173c63bbc1522e47f6b40
+  - {fileID: 6130381995219832732}
+  - {fileID: -8194795654599567539}
+  m_RendererFeatureMap: cbec9f1ceda95f9ba5425130f2ae6d167332206a0ce173c63bbc1522e47f6b409c4f87caf17d13554d97ad20c53c468e
   m_UseNativeRenderPass: 0
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
   xrSystemData: {fileID: 11400000, guid: 60e1133243b97e347b653163a8c01b64, type: 2}
@@ -194,6 +192,45 @@ MonoBehaviour:
       stencilReference: 0
       stencilCompareFunction: 8
       passOperation: 0
+      failOperation: 0
+      zFailOperation: 0
+    cameraSettings:
+      overrideCamera: 0
+      restoreCamera: 1
+      offset: {x: 0, y: 0, z: 0, w: 0}
+      cameraFieldOfView: 60
+--- !u!114 &6130381995219832732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b3d386ba5cd94485973aee1479b272e, type: 3}
+  m_Name: Stencil
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  settings:
+    passTag: Stencil
+    Event: 300
+    filterSettings:
+      RenderQueueType: 0
+      LayerMask:
+        serializedVersion: 2
+        m_Bits: 65
+      PassNames: []
+    overrideMaterial: {fileID: 0}
+    overrideMaterialPassIndex: 0
+    overrideDepthState: 1
+    depthCompareFunction: 5
+    enableWrite: 0
+    stencilSettings:
+      overrideStencilState: 1
+      stencilReference: 1
+      stencilCompareFunction: 3
+      passOperation: 1
       failOperation: 0
       zFailOperation: 0
     cameraSettings:
