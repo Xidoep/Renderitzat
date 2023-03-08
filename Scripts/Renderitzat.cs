@@ -8,7 +8,8 @@ public class Renderitzat : MonoBehaviour
 {
     const string KEY_GUARDAT_QUALITAT = "QualitatGrafica";
 
-    public Guardat guardat;
+    //public Guardat guardat;
+    [SerializeField] SavableVariable<int> qualitat;
 
     public UniversalRenderPipelineAsset baixa;
     public UniversalRenderPipelineAsset mitja;
@@ -28,7 +29,8 @@ public class Renderitzat : MonoBehaviour
                 GraphicsSettings.renderPipelineAsset = alta;
                 break;
         }
-        guardat.SetLocal(KEY_GUARDAT_QUALITAT, qualitat);
+        this.qualitat.Valor = qualitat;
+        //guardat.SetLocal(KEY_GUARDAT_QUALITAT, qualitat);
     }
 
     public void AugmentarQualitat()
@@ -56,6 +58,7 @@ public class Renderitzat : MonoBehaviour
 
     private void OnValidate()
     {
-        guardat = XS_Utils.XS_Editor.LoadGuardat<Guardat>();
+        qualitat = new SavableVariable<int>(KEY_GUARDAT_QUALITAT, Guardat.Direccio.Local, 3);
+        //guardat = XS_Utils.XS_Editor.LoadGuardat<Guardat>();
     }
 }
