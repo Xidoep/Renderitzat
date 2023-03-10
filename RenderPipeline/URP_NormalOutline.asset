@@ -17,7 +17,7 @@ MonoBehaviour:
   m_Settings:
     Downsample: 1
     AfterOpaque: 1
-    Source: 1
+    Source: 0
     NormalSamples: 2
     Intensity: 0.5
     DirectLightingStrength: 0.5
@@ -98,9 +98,9 @@ MonoBehaviour:
   - {fileID: 1616140196511826597}
   - {fileID: -4146723388441742733}
   - {fileID: 4641944458736548923}
-  - {fileID: 6130381995219832732}
   - {fileID: -8194795654599567539}
-  m_RendererFeatureMap: cbec9f1ceda95f9ba5425130f2ae6d167332206a0ce173c63bbc1522e47f6b409c4f87caf17d13554d97ad20c53c468e
+  - {fileID: 6130381995219832732}
+  m_RendererFeatureMap: cbec9f1ceda95f9ba5425130f2ae6d167332206a0ce173c63bbc1522e47f6b404d97ad20c53c468e9c4f87caf17d1355
   m_UseNativeRenderPass: 0
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
   xrSystemData: {fileID: 11400000, guid: 60e1133243b97e347b653163a8c01b64, type: 2}
@@ -211,7 +211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b3d386ba5cd94485973aee1479b272e, type: 3}
   m_Name: Stencil
   m_EditorClassIdentifier: 
-  m_Active: 1
+  m_Active: 0
   settings:
     passTag: Stencil
     Event: 300
