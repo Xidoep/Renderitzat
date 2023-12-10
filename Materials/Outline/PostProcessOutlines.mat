@@ -85,13 +85,13 @@ Material:
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
     - _ColorStrength: 3
-    - _ColorThickness: 1
-    - _ColorThreshold: 1
+    - _ColorThickness: 1.88
+    - _ColorThreshold: 2
     - _Cull: 2
     - _Cutoff: 0.5
     - _DepthStrength: 10
-    - _DepthThickness: 0.6
-    - _DepthThreshold: 0.09
+    - _DepthThickness: 0.3
+    - _DepthThreshold: 0.5
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
