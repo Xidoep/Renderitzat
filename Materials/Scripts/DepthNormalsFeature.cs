@@ -29,7 +29,8 @@ public class DepthNormalsFeature : ScriptableRendererFeature {
     class RenderPass : ScriptableRenderPass {
 
         private Material material;
-        private RenderTargetHandle destinationHandle;
+        //private RenderTargetHandle destinationHandle;
+        private RTHandle destinationHandle;
         private List<ShaderTagId> shaderTags;
         private FilteringSettings filteringSettings;
 
@@ -45,17 +46,20 @@ public class DepthNormalsFeature : ScriptableRendererFeature {
             };
             // Render opaque materials
             this.filteringSettings = new FilteringSettings(RenderQueueRange.opaque);
-            destinationHandle.Init("_DepthNormalsTexture");
+            //destinationHandle.Init("_DepthNormalsTexture");
+            destinationHandle = RTHandles.Alloc(Vector2.one, depthBufferBits: DepthBits.Depth32, dimension: TextureDimension.Tex2D, name: "_DepthNormalsTexture");
         }
 
         // Configure the pass by creating a temporary render texture and
         // readying it for rendering
+        [System.Obsolete]
         public override void Configure(CommandBuffer cmd, RenderTextureDescriptor cameraTextureDescriptor) {
-            cmd.GetTemporaryRT(destinationHandle.id, cameraTextureDescriptor, FilterMode.Point);
-            ConfigureTarget(destinationHandle.Identifier());
+            cmd.GetTemporaryRT(destinationHandle.GetInstanceID(), cameraTextureDescriptor, FilterMode.Point);
+            ConfigureTarget(destinationHandle.nameID);
             ConfigureClear(ClearFlag.All, Color.black);
         }
 
+        [System.Obsolete]
         public override void Execute(ScriptableRenderContext context, ref RenderingData renderingData) {
 
             // Create the draw settings, which configures a new draw call to the GPU
@@ -66,7 +70,7 @@ public class DepthNormalsFeature : ScriptableRendererFeature {
         }
 
         public override void FrameCleanup(CommandBuffer cmd) {
-            cmd.ReleaseTemporaryRT(destinationHandle.id);
+            cmd.ReleaseTemporaryRT(destinationHandle.GetInstanceID());
         }
     }
 

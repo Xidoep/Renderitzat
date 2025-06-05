@@ -11,14 +11,16 @@ public class BlitMaterialFeature : ScriptableRendererFeature
         private Material material;
         private int materialPassIndex;
         private RenderTargetIdentifier sourceID;
-        private RenderTargetHandle tempTextureHandle;
+        //private RenderTargetHandle tempTextureHandle;
+        private RTHandle tempTextureHandle;
 
         public RenderPass(string profilingName, Material material, int passIndex) : base()
         {
             this.profilingName = profilingName;
             this.material = material;
             this.materialPassIndex = passIndex;
-            tempTextureHandle.Init("_TempBlitMaterialTexture");
+            //tempTextureHandle.Init("_TempBlitMaterialTexture");
+            tempTextureHandle = RTHandles.Alloc(Vector2.one, depthBufferBits: DepthBits.Depth32, dimension: TextureDimension.Tex2D, name: "_TempBlitMaterialTexture");
         }
 
         public void SetSource(RenderTargetIdentifier source)
@@ -26,6 +28,7 @@ public class BlitMaterialFeature : ScriptableRendererFeature
             this.sourceID = source;
         }
 
+        [System.Obsolete]
         public override void Execute(ScriptableRenderContext context, ref RenderingData renderingData)
         {
             CommandBuffer cmd = CommandBufferPool.Get(profilingName);
@@ -33,9 +36,9 @@ public class BlitMaterialFeature : ScriptableRendererFeature
             RenderTextureDescriptor cameraTextureDesc = renderingData.cameraData.cameraTargetDescriptor;
             cameraTextureDesc.depthBufferBits = 0;
 
-            cmd.GetTemporaryRT(tempTextureHandle.id, cameraTextureDesc, FilterMode.Bilinear);
-            Blit(cmd, sourceID, tempTextureHandle.Identifier(), material, materialPassIndex);
-            Blit(cmd, tempTextureHandle.Identifier(), sourceID);
+            cmd.GetTemporaryRT(tempTextureHandle.GetInstanceID(), cameraTextureDesc, FilterMode.Bilinear);
+            Blit(cmd, sourceID, tempTextureHandle.nameID, material, materialPassIndex);
+            Blit(cmd, tempTextureHandle.nameID, sourceID);
 
             context.ExecuteCommandBuffer(cmd);
             CommandBufferPool.Release(cmd);
@@ -43,7 +46,7 @@ public class BlitMaterialFeature : ScriptableRendererFeature
 
         public override void FrameCleanup(CommandBuffer cmd)
         {
-            cmd.ReleaseTemporaryRT(tempTextureHandle.id);
+            cmd.ReleaseTemporaryRT(tempTextureHandle.GetInstanceID());
         }
     }
 
@@ -71,9 +74,10 @@ public class BlitMaterialFeature : ScriptableRendererFeature
         renderPass.renderPassEvent = settings.renderEvent;
     }
 
+    [System.Obsolete]
     public override void AddRenderPasses(ScriptableRenderer renderer, ref RenderingData renderingData)
     {
-        renderPass.SetSource(renderer.cameraColorTarget);
+        renderPass.SetSource(renderer.cameraColorTargetHandle);
         renderer.EnqueuePass(renderPass);
     }
 }

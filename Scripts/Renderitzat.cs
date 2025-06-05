@@ -20,13 +20,13 @@ public class Renderitzat : MonoBehaviour
         switch (qualitat)
         {
             case 1:
-                GraphicsSettings.renderPipelineAsset = baixa;
+                GraphicsSettings.defaultRenderPipeline = baixa;
                 break;
             case 2:
-                GraphicsSettings.renderPipelineAsset = mitja;
+                GraphicsSettings.defaultRenderPipeline = mitja;
                 break;
             case 3:
-                GraphicsSettings.renderPipelineAsset = alta;
+                GraphicsSettings.defaultRenderPipeline = alta;
                 break;
         }
         this.qualitat.Valor = qualitat;
@@ -35,18 +35,18 @@ public class Renderitzat : MonoBehaviour
 
     public void AugmentarQualitat()
     {
-        if(GraphicsSettings.renderPipelineAsset != alta)
+        if(GraphicsSettings.defaultRenderPipeline != alta)
         {
-            if(GraphicsSettings.renderPipelineAsset = baixa) GraphicsSettings.renderPipelineAsset = mitja;
-            else if(GraphicsSettings.renderPipelineAsset = mitja) GraphicsSettings.renderPipelineAsset = alta;
+            if(GraphicsSettings.defaultRenderPipeline = baixa) GraphicsSettings.defaultRenderPipeline = mitja;
+            else if(GraphicsSettings.defaultRenderPipeline = mitja) GraphicsSettings.defaultRenderPipeline = alta;
         }
     }
     public void DisminueixQualitat()
     {
-        if (GraphicsSettings.renderPipelineAsset != baixa)
+        if (GraphicsSettings.defaultRenderPipeline != baixa)
         {
-            if (GraphicsSettings.renderPipelineAsset = alta) GraphicsSettings.renderPipelineAsset = mitja;
-            else if (GraphicsSettings.renderPipelineAsset = mitja) GraphicsSettings.renderPipelineAsset = baixa;
+            if (GraphicsSettings.defaultRenderPipeline = alta) GraphicsSettings.defaultRenderPipeline = mitja;
+            else if (GraphicsSettings.defaultRenderPipeline = mitja) GraphicsSettings.defaultRenderPipeline = baixa;
         }
     }
 
